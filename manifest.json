@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "My First Chrome Extension",
+  "version": "1.0",
+  "description": "A simple Chrome extension",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://localhost:1001/*",
+    "http://localhost:6001/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "externally_connectable": {
+    "matches": ["http://localhost:1001/*"]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' http://localhost:6001; object-src 'self'"
+  }
+}
